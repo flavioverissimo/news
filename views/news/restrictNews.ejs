@@ -1,0 +1,9 @@
+<%- include("../partials/header.ejs")%>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <% restricNews.forEach(element => {  %> 
+        <div class="feature col">
+          <h3 class="fs-2"><%= element.title %></h3>
+          <p><%= element.description %></p>
+        </div>
+    <%}) %> 
+<%- include("../partials/footer.ejs")%>

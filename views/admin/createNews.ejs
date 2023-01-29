@@ -1,0 +1,24 @@
+<%- include("../partials/headerAdmin.ejs")%>
+<div>
+  <h1>Create News</h1>
+  <form class="w-50 mx-auto d-flex flex-column mt-5" method="post">
+    <div class="form-group mb-3">
+      <label for="title" class="text-uppercase">Title</label>
+      <input type="text" class="form-control py-3" id="title" name="title">
+    </div>
+    <div class="form-group mb-3">
+      <label for="description" class="text-uppercase">Description</label>
+      <textarea class="form-control" id="description" rows="5" name="description"></textarea>
+    </div>
+    <div class="form-group mb-3">
+      <label for="rule" class="text-uppercase">Rule</label>
+      <select class="form-control py-3" id="rule" name="rule">
+        <option value="restrict">restrict</option>
+        <option value="public">public</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3 text-uppercase py-3">Create</button>
+  </form>
+</div>
+  
+<%- include("../partials/footerAdmin.ejs")%>

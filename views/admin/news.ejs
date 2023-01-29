@@ -1,0 +1,26 @@
+<%- include("../partials/headerAdmin.ejs")%>
+  <h2>All News</h2>
+      <div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col" class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" >
+            <% news.forEach(element => {  %> 
+              <tr>
+                <td class="w-25"><%= element.title %></td>
+                <td><%= element.description %></td>
+                <td class="w-25 text-center">
+                  <a class="btn btn-outline-secondary" href="/admin/news/edit/<%= element.id %>">Edit</a>
+                  <a class="btn btn-outline-danger" href="/admin/news/delete/<%= element.id %>">Delete</a>
+              </td>
+              </tr>
+            <%}) %>
+          </tbody>
+        </table>
+      </div>
+<%- include("../partials/footerAdmin.ejs")%>

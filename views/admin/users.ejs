@@ -1,0 +1,26 @@
+<%- include("../partials/headerAdmin.ejs")%>
+  <h2>All Users</h2>
+      <div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">User</th>
+              <th scope="col">Roles</th>
+              <th scope="col" class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <% users.forEach(element => {  %> 
+              <tr>
+                <td class="w-25"><%= element.username %></td>
+                <td><%= element.roles %></td>
+                <td class="w-25 text-center">
+                  <a class="btn btn-outline-secondary" href="/admin/users/edit/<%= element.id %>">Edit</a>
+                  <a class="btn btn-outline-danger" href="/admin/users/delete/<%= element.id %>">Delete</a>
+              </td>
+              </tr>
+            <%}) %>
+          </tbody>
+        </table>
+      </div>
+<%- include("../partials/footerAdmin.ejs")%>

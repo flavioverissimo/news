@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Now</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid min-vh-100">
+    <div class="row">
+      <nav id="sidebarMenu" class="col d-md-block sidebar collapse text-bg-dark min-vh-100">
+        <div class="pt-3 text-white">
+          <div>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-5">
+                <a class="text-primary text-decoration-none text-uppercase fw-bold" href="/">Go back site</a>
+              </li>
+              <li class="nav-item">
+                <a class="text-white text-decoration-none text-uppercase fw-bold" href="/admin">Home</a>
+              </li>
+            </ul>
+            <ul class="nav flex-column mt-4">
+              <h6 class="text-uppercase fw-bold">Manage News</h6>
+              <li>
+                <a class="text-white text-decoration-none" href="/admin/news">News</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/admin/news/create">Create New</a>
+              </li>
+            </ul>
+  
+            <ul class="nav flex-column mt-4">
+              <h6 class="text-uppercase fw-bold">Manage Users</h6>
+              <li>
+                <a class="text-white text-decoration-none" href="/admin/users">Users</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="/admin/users/create">Create User</a>
+              </li>
+            </ul>
+
+            <div class="nav-item dropdown mt-5">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= locals.user.username %>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item blocked" href="#">Perfil</a></li>
+                <li><a class="dropdown-item hidden" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-5 p-4 min-vh-100">
