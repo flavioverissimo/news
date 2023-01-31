@@ -92,7 +92,7 @@ exports.editUserPost = async ({ Users }, req, res) => {
     const isEqual = req.session.user.username === user.username;
 
     if (!isEqual) return res.redirect("/admin/users");
-    if (req.session.user.roles.indexOf(data.roles) >= 0) {
+    if (req.user.roles.indexOf(data.roles) >= 0) {
       return res.redirect("/admin/users");
     }
     req.session.user.roles = data.roles;
@@ -105,7 +105,7 @@ exports.editUserPost = async ({ Users }, req, res) => {
 exports.removeUser = async ({ Users }, req, res) => {
   try {
     const user = await Users.findByIdAndDelete(req.params.id);
-    const isEqual = req.session.user.username == user.username;
+    const isEqual = req.user.username == user.username;
 
     if (!isEqual) return res.redirect("/admin/users");
 

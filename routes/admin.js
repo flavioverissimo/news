@@ -12,7 +12,7 @@ const models = {
 
 // User validation
 router.use(async (req, res, next) => {
-  if (!req.session.user || req.session.user.roles.indexOf("admin") == -1) {
+  if (!req.isAuthenticated() || req.user.roles.indexOf("admin") == -1) {
     return res.redirect("/");
   }
   next();
